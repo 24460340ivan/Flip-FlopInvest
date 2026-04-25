@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación: Flip-Flops</title>
+    <style>
+        :root {
+            --primary-color: #e67e22;
+            --bg-color: #fdf5e6; /* Crema cálido */
+            --paper-color: #ffffff;
+            --text-color: #2c3e50;
+            --accent-color: #d35400;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Contenedor tipo hoja de Word */
+        .page {
+            background-color: var(--paper-color);
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            min-height: 1000px;
+            box-sizing: border-box;
+        }
+
+        /* Portada */
+        .cover {
+            text-align: center;
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 50px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .cover h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 100px;
+        }
+
+        .cover-info {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        /* Índice */
+        .index {
+            background: #fffaf0;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        .index h2 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        .index ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .index li {
+            margin: 10px 0;
+        }
+
+        .index a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .index a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Secciones de contenido */
+        section {
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #f9ebde;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: var(--accent-color);
+            margin-top: 25px;
+        }
+
+        .highlight-box {
+            background-color: #fff4e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .footer-references {
+            font-size: 0.9rem;
+            background: #fdfdfd;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Navegación fluida */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="cover">
+            <img src="descarga (1).png" alt="Logo de la Institución" class="logo">
+            <h1>Investigación sobre Flip-Flops</h1>
+            <div class="cover-info">
+                <p><strong>Estudiante:</strong> Miguel Ivan Carrillo Ventura</p>
+                <p><strong>Fecha:</strong> 22 de abril de 2026</p>
+            </div>
+        </div>
+
+        <div class="index">
+            <h2>Índice</h2>
+            <ul>
+                <li><a href="#que-es">1. ¿Qué es un Flip-Flop?</a></li>
+                <li><a href="#construccion">2. Construcción con compuertas lógicas</a></li>
+                <li><a href="#tipos">3. Tipos de Flip-Flops</a></li>
+                <li><a href="#conclusiones">4. Conclusiones</a></li>
+                <li><a href="#referencias">5. Referencias</a></li>
+            </ul>
+        </div>
+
+        <section id="que-es">
+            <h2>¿Qué es un Flip-Flop?</h2>
+            <p>Un flip-flop es un circuito electrónico biestable, esto significa que tiene dos estados estables posibles: <strong>Q=1 (set) o Q=0 (reset)</strong>. Puede almacenar un bit de información indefinidamente mientras esté alimentado, y solo cambia de estado cuando se aplican ciertas condiciones en sus entradas.</p>
+            
+            <div class="highlight-box">
+                En pocas palabras, es un pequeño circuito que puede almacenar 1 bit de información (un 0 o un 1). Se usa en computadoras, relojes digitales y calculadoras para "recordar" algo.
+            </div>
+
+            <p>Su comportamiento se describe mediante:</p>
+            <ul>
+                <li>Tabla de verdad</li>
+                <li>Tabla de excitación</li>
+                <li>Ecuación característica</li>
+                <li>Diagrama de tiempos</li>
+            </ul>
+        </section>
+
+        <section id="construccion">
+            <h2>¿Cómo se construye un flip-flop con compuertas lógicas?</h2>
+            <p>Se utilizan compuertas básicas como <strong>NAND o NOR</strong>. El circuito más simple es el "latch", formado por dos compuertas conectadas en forma cruzada, donde la salida de una va a la entrada de la otra, creando un lazo de retroalimentación.</p>
+            <p>Para convertir este latch en un verdadero flip-flop sensible al reloj, se agregan compuertas AND adicionales que controlan el paso de las señales, permitiendo cambios solo en el momento exacto del pulso de reloj.</p>
+        </section>
+
+        <section id="tipos">
+            <h2>Tipos de Flip-Flops</h2>
+
+            <h3>A) Flip-flop SR (Set-Reset)</h3>
+            <p>Es el más básico. <strong>S (Set)</strong> pone la salida en 1 y <strong>R (Reset)</strong> la pone en 0. Si ninguno se activa, recuerda el valor anterior. Su limitación es que no se pueden activar S y R al mismo tiempo, pues genera una condición prohibida.</p>
+
+            <h3>B) Flip-flop JK (Jack-Kilby)</h3>
+            <p>Es una mejora del SR que elimina la condición prohibida. Cuando J=1 y K=1, el flip-flop <strong>invierte su estado</strong> (toggle). Es el más versátil y se usa para construir contadores digitales.</p>
+
+            <h3>C) Flip-flop D (Data)</h3>
+            <p>Es el más sencillo y utilizado. Tiene una sola entrada D. Cuando llega el pulso de reloj, la salida Q copia exactamente el valor de D. Es fundamental en memorias RAM y registros.</p>
+
+            <h3>D) Flip-flop T (Toggle)</h3>
+            <p>Tiene una entrada T. Si T=0, mantiene su estado. Si T=1, cambia al estado contrario. Es ideal para divisores de frecuencia e interruptores de alternancia.</p>
+        </section>
+
+        <section id="conclusiones">
+            <h2>Conclusiones</h2>
+            <p>Los flip-flops son componentes fundamentales en la electrónica digital porque permiten almacenar información temporalmente, actuando como la "memoria" básica de cualquier sistema digital.</p>
+            <p>Como conclusión final, entiendo que son la base de todos los sistemas modernos. Desde procesadores hasta relojes, todos dependen de estos pequeños circuitos para funcionar correctamente.</p>
+        </section>
+
+        <section id="referencias" class="footer-references">
+            <h2>Referencias</h2>
+            <p><strong>Libros:</strong></p>
+            <ul>
+                <li>Floyd, T. L. (2006). <em>Fundamentos de sistemas digitales</em> (9ª ed.). Prentice Hall.</li>
+                <li>Tocci, R. J., Widmer, N. S., & Moss, G. L. (2017). <em>Sistemas Digitales: Principios y Aplicaciones</em> (10ª ed.). Pearson Educación.</li>
+                <li>Mandado, E. (2012). <em>Electrónica Digital: Fundamentos Operativos</em>. Editorial Académica Española.</li>
+            </ul>
+            <p><strong>Web:</strong></p>
+            <ul>
+                <li>Khan Academy. (s.f.). Lógica secuencial y flip-flops.</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
